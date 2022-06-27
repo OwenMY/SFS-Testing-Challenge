@@ -1,5 +1,9 @@
+import React from 'react';
+
 const App = () => {
-  //ToDo
+  return (
+    <div>Hello All!!</div>
+  )
 };
 
 export default App;
