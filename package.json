@@ -1,0 +1,29 @@
+{
+  "name": "sfs-testing-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OwenMY/SFS-Testing-Challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OwenMY/SFS-Testing-Challenge/issues"
+  },
+  "homepage": "https://github.com/OwenMY/SFS-Testing-Challenge#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.3.0",
+    "jest": "^28.1.1"
+  }
+}
