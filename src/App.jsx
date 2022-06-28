@@ -8,7 +8,8 @@ const checkBoxStyle = {
   padding: '0 1em'
 };
 
-const numFormat = {textAlign: 'right'};
+const alignRight = {textAlign: 'right'};
+const alignLeft = {textAlign: 'left'};
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -56,7 +57,7 @@ const App = () => {
       });
 
       setTotalDebt(sum);
-      setCheckCount(allBoxes.length);
+      setCheckCount(allBoxes.length - 1);
     } else {
       allBoxes.forEach(box => box.checked = false);
 
@@ -106,9 +107,9 @@ const App = () => {
         <thead>
           <tr>
             <th style={checkBoxStyle}><input data="checkbox" onClick={checkAllRows} type="checkbox"/></th>
-            <th>Creditor</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th style={alignLeft}>Creditor</th>
+            <th style={alignLeft}>First Name</th>
+            <th style={alignLeft}>Last Name</th>
             <th>Min Pay %</th>
             <th>Balance</th>
           </tr>
@@ -121,8 +122,8 @@ const App = () => {
                 <td>{row.creditorName}</td>
                 <td>{row.firstName}</td>
                 <td>{row.lastName}</td>
-                <td style={numFormat}>{row.minPaymentPercentage.toFixed(2)}%</td>
-                <td name={`debt${row.id}`} style={numFormat}>{row.balance.toFixed(2)}</td>
+                <td style={alignRight}>{row.minPaymentPercentage.toFixed(2)}%</td>
+                <td name={`debt${row.id}`} style={alignRight}>{row.balance.toFixed(2)}</td>
               </tr>
             );
           })}
@@ -135,11 +136,11 @@ const App = () => {
         </div>
         <div className="total-debt">
           <span>Total</span>
-          <span data-testid="total-debt">${totalDebt.toFixed(2).toString()}</span>
+          <span>${totalDebt.toFixed(2).toString()}</span>
         </div>
         <div className="sums-row">
-          <span>Total Row Count : {rowCount}</span>
-          <span name="check-count">Check Row Count : {checkCount}</span>
+          <span role="row-count">Total Row Count : {rowCount}</span>
+          <span role="check-count">Check Row Count : {checkCount}</span>
         </div>
       </div>
     </div>
