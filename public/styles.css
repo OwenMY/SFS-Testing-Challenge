@@ -1,7 +1,3 @@
-#root {
-  margin: auto;
-}
-
 /*  Table  */
 .table-container {
   display: flex;
@@ -15,17 +11,13 @@ table {
   margin: auto;
 }
 
+th {
+  border: solid black 1px;
+}
+
 td {
   border: solid grey 1px;
   border-radius: 2px;
-}
-
-/* th {
-  border: solid black 1px;
-} */
-
-.col-label {
-  border: solid red 1px;
 }
 
 /* Table Buttons */
@@ -36,13 +28,15 @@ td {
 
 .add-btn {
   color: white;
-  background-color: lightblue;
+  background-color: #428bca;
   margin-right: .4em;
+  border-radius: 3px;
 }
 
 .rmv-btn {
   color: white;
   background-color: red;
+  border-radius: 3px;
 }
 
 /* Table Footer */
@@ -52,11 +46,14 @@ td {
 }
 
 .total-debt {
-  display:flex;
+  display: flex;
+  background-color: #87ceeb;
   justify-content: space-between;
+  padding: 0 0 0.1em 2em;
+  margin: 0.2em 0;
 }
 
 .sums-row {
   display: flex;
-  gap: 1em;
+  gap: 2em;
 }
