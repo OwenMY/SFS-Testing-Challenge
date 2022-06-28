@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 const URL = 'https://raw.githubusercontent.com/StrategicFS/Recruitment/master/data.json';
 
@@ -16,11 +17,10 @@ const App = () => {
   const [totalDebt, setTotalDebt] = useState(0);
 
   useEffect( () => {
-    fetch(URL)
-      .then(res => res.json())
-      .then(body => {
-        setData(body);
-        setRowCount(body.length);
+    axios.get(URL)
+      .then(res => {
+        setData(res.data);
+        setRowCount(res.data.length);
       })
       .catch(err => console.error(err));
   }, []);
