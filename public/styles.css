@@ -1,0 +1,62 @@
+#root {
+  margin: auto;
+}
+
+/*  Table  */
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: auto;
+}
+
+table {
+  border-spacing: 0;
+  margin: auto;
+}
+
+td {
+  border: solid grey 1px;
+  border-radius: 2px;
+}
+
+/* th {
+  border: solid black 1px;
+} */
+
+.col-label {
+  border: solid red 1px;
+}
+
+/* Table Buttons */
+.btn-container {
+  padding-top: .1em;
+  gap: .2em;
+}
+
+.add-btn {
+  color: white;
+  background-color: lightblue;
+  margin-right: .4em;
+}
+
+.rmv-btn {
+  color: white;
+  background-color: red;
+}
+
+/* Table Footer */
+.table-ftr {
+  display: flex;
+  flex-direction: column;
+}
+
+.total-debt {
+  display:flex;
+  justify-content: space-between;
+}
+
+.sums-row {
+  display: flex;
+  gap: 1em;
+}
