@@ -27,7 +27,8 @@ const App = () => {
 
   const checkRow = (e) => {
     let checked = e.target.checked;
-    let rowValue = e.target.parentElement.parentElement.childNodes[5].innerText;
+    let element = document.getElementsByName(`${e.target.name}`);
+    let rowValue = element[1].textContent;
 
     if (checked) {
       setTotalDebt(totalDebt + Number(rowValue));
@@ -47,8 +48,11 @@ const App = () => {
 
       allBoxes.forEach(box => {
         box.checked = true;
-        let rowValue = box.parentElement.parentElement.childNodes[5].innerText;
-        sum+= Number(rowValue);
+        if (box.name) {
+          let element = document.getElementsByName(`${box.name}`);
+          let rowValue = element[1].textContent;
+          sum+= Number(rowValue);
+        }
       });
 
       setTotalDebt(sum);
@@ -67,9 +71,10 @@ const App = () => {
     let lastDebt = allBoxes[allBoxes.length - 1];
 
     if (lastDebt.checked) {
-      let balance = lastDebt.parentElement.parentElement.childNodes[5].innerText;
+      let element = document.getElementsByName(`${lastDebt.name}`);
+      let rowValue = element[1].textContent;
 
-      setTotalDebt(totalDebt - Number(balance));
+      setTotalDebt(totalDebt - Number(rowValue));
       setCheckCount(checkCount - 1);
     }
 
@@ -97,13 +102,10 @@ const App = () => {
 
   return !data.length ? null : (
     <div className="table-container">
-      <table data="table">
-        <colgroup>
-          <col className="check-box-style"/>
-        </colgroup>
+      <table>
         <thead>
           <tr>
-            <th style={checkBoxStyle}><input data="checkAll" onClick={checkAllRows} type="checkbox"/></th>
+            <th style={checkBoxStyle}><input data="checkbox" onClick={checkAllRows} type="checkbox"/></th>
             <th>Creditor</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -115,12 +117,12 @@ const App = () => {
           {data.map(row => {
             return (
               <tr key={row.id}>
-                <td style={checkBoxStyle}><input data="checkbox" onClick={checkRow} type="checkbox"/></td>
+                <td style={checkBoxStyle}><input data="checkbox" name={`debt${row.id}`} onClick={checkRow} type="checkbox"/></td>
                 <td>{row.creditorName}</td>
                 <td>{row.firstName}</td>
                 <td>{row.lastName}</td>
                 <td style={numFormat}>{row.minPaymentPercentage.toFixed(2)}%</td>
-                <td style={numFormat}>{row.balance.toFixed(2)}</td>
+                <td name={`debt${row.id}`} style={numFormat}>{row.balance.toFixed(2)}</td>
               </tr>
             );
           })}
@@ -133,11 +135,11 @@ const App = () => {
         </div>
         <div className="total-debt">
           <span>Total</span>
-          <span>${totalDebt.toFixed(2)}</span>
+          <span data-testid="total-debt">${totalDebt.toFixed(2).toString()}</span>
         </div>
         <div className="sums-row">
           <span>Total Row Count : {rowCount}</span>
-          <span>Check Row Count : {checkCount}</span>
+          <span name="check-count">Check Row Count : {checkCount}</span>
         </div>
       </div>
     </div>
