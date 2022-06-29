@@ -15,7 +15,7 @@ I was able to achieve approximately 94% average test coverage using Jest and Rea
 <br/>
 
 ## Getting Started
-1. From the terminal, clone from [this](https://github.com/OwenMY/SFS-Testing-Challenge) repo.
+1. From the terminal, clone from [this](https://github.com/OwenMY/SFS-Testing-Challenge) repo
 ```
 git clone https://github.com/OwenMY/SFS-Testing-Challenge.git
 ```
