@@ -193,7 +193,7 @@ describe('Check Boxes', () => {
     expect(Number(count.join(''))).toBe(2);
   });
 
-  test('Should decrement Check Row Count when clicking on check box twice', async () => {
+  test('Should decrement Check Row Count when clicking on check box twice', () => {
     let table = screen.getByRole('table');
     let allRows = table.rows;
     let checkBox = allRows[3].children[0].firstChild;
