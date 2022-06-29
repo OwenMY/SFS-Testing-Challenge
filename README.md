@@ -24,7 +24,7 @@ git clone https://github.com/OwenMY/SFS-Testing-Challenge.git
 npm install
 ```
 
-3. Run webpack
+3. Run Webpack
 ```
 npm run build
 ```
