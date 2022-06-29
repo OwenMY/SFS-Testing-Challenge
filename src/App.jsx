@@ -3,11 +3,7 @@ import axios from 'axios';
 
 const URL = 'https://raw.githubusercontent.com/StrategicFS/Recruitment/master/data.json';
 
-const checkBoxStyle = {
-  border: 0,
-  padding: '0 1em'
-};
-
+const checkBoxStyle = {border: 0, padding: '0 1em'};
 const alignRight = {textAlign: 'right', paddingLeft: '2em'};
 const alignLeft = {textAlign: 'left', paddingRight: '1em'};
 
