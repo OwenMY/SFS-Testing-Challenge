@@ -8,8 +8,8 @@ const checkBoxStyle = {
   padding: '0 1em'
 };
 
-const alignRight = {textAlign: 'right'};
-const alignLeft = {textAlign: 'left'};
+const alignRight = {textAlign: 'right', paddingLeft: '2em'};
+const alignLeft = {textAlign: 'left', paddingRight: '1em'};
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -110,8 +110,8 @@ const App = () => {
             <th style={alignLeft}>Creditor</th>
             <th style={alignLeft}>First Name</th>
             <th style={alignLeft}>Last Name</th>
-            <th>Min Pay %</th>
-            <th>Balance</th>
+            <th style={{textAlign: 'right'}}>Min Pay %</th>
+            <th style={alignRight}>Balance</th>
           </tr>
         </thead>
         <tbody>
